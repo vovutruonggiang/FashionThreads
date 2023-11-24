@@ -87,7 +87,7 @@ public class Home_Controller {
 
 	@ModelAttribute("list_new_product")
 	public List<Product_Entity> list_new_product() {
-		return product_dao.findAll();
+		return product_dao.list_new_product();
 	}
 
 	@PostMapping("/home/favorite")
@@ -96,5 +96,4 @@ public class Home_Controller {
 		favouriteService.saveFavourite(id, accountId, productId);
 		return "redirect:/views/home"; // Điều hướng đến trang thành công sau khi lưu dữ liệu
 	}
-
 }

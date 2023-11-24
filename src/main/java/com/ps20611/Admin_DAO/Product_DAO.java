@@ -17,6 +17,13 @@ public interface Product_DAO extends JpaRepository<Product_Entity, Integer> {
 			+ "WHERE date_create >= DATEADD(DAY, -30, GETDATE());",
 			nativeQuery = true)
 	List<Product_Entity> list_new_product();
+//	
+//	@Query(value = "select * from product \r\n"
+//			+ "inner join detailed_products\r\n"
+//			+ "on product.id = detailed_products.product_id \r\n"
+//			+ "WHERE date_create >= DATEADD(DAY, -30, GETDATE())",
+//			nativeQuery = true)
+//	List<Product_Entity> list_new_product();
 	
 	@Query("select p from Product_Entity p where p.id = ?1")
 	List<Product_Entity> listproduct(Integer id);
