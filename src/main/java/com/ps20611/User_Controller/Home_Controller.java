@@ -67,6 +67,7 @@ public class Home_Controller {
 	@RequestMapping("home")
 	public String View_Home(Model model) {
 		model.addAttribute("favorite", new Product_Entity());
+		System.out.println("hello");
 		return "/user/jsp/home";
 	}
 
