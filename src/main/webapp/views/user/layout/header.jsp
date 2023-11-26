@@ -466,7 +466,7 @@
 							Chúng Tôi</a>
 						<ul class="sub-menu sub-menu-collection sub-menu-about">
 							<li><a href="https://ivymoda.com/about/gioi-thieu">Về
-									IVY moda</a></li>
+									Fashion Threads</a></li>
 							<li><a href="https://ivymoda.com/tin-tuc/fashion-show">Fashion
 									Show</a></li>
 							<li><a
@@ -754,11 +754,11 @@
 			<div class="right-header">
 				<form class="search-form"
 					enctype="application/x-www-form-urlencoded" method="get"
-					action="https://ivymoda.com/tim-kiem" name="frm_search">
+					action="/form-search" name="keyword">
 					<button class="submit">
 						<i class="icon-ic_search"></i>
 					</button>
-					<input id="search-quick" type="text" name="q"
+					<input id="search-quick" type="text" name="keyword"
 						placeholder="TÌM KIẾM SẢN PHẨM" autocomplete="off" minlength="1">
 					<div class="quick-search">
 						<div class="item-searchs">

@@ -2,6 +2,9 @@ package com.ps20611.Admin_DAO;
 
 import java.util.List;
 import java.util.Set;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -30,12 +33,17 @@ public interface Product_DAO extends JpaRepository<Product_Entity, Integer> {
 	
 	@Query ("SELECT p FROM Product_Entity p WHERE p.product_name LIKE %?1%")
 	List<Product_Entity> product_search(String keywork);
+	@Query("SELECT p FROM Product_Entity p")
+	List<Product_Entity> product_macdinh();
 	
 	@Query ("SELECT p FROM Product_Entity p ORDER BY p.price DESC")
 	List<Product_Entity> product_sxcao_thap();
 	
 	@Query ("SELECT p FROM Product_Entity p ORDER BY p.price ASC")
 	List<Product_Entity> product_sxthap_cao();
+	
 	@Query("SELECT p FROM Product_Entity p")
 	Set<Product_Entity> getAll();
+	
+	Page<Product_Entity> findAll(Pageable pageable);
 }
