@@ -29,52 +29,8 @@
 </head>
 
 <body>
+	<%@include file="/views/user/layout/header.jsp"%>
 	<form action="/cart/add/${detail.id}" method="post">
-		<header>
-			<div class="row">
-				<div class="col-5">
-					<div>
-						<nav class="navbar navbar-expand-lg">
-							<div class="container-fluid"
-								style="padding-left: 50px; padding-top: 10px;">
-								<div class="collapse navbar-collapse" id="navbarNav">
-									<ul class="navbar-nav">
-										<li class="nav-item"><a class="nav-link" href="#">NAM</a>
-										</li>
-										<li class="nav-item"><a class="nav-link" href="#">NỮ</a></li>
-										<li class="nav-item"><a class="nav-link"
-											style="width: 70px;" href="#">TRẺ EM</a></li>
-										<li class="nav-item"><a class="nav-link"
-											style="width: 90px;" href="#">GIẢM GIÁ</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">CUỘC
-												SỐNG</a></li>
-										<li class="nav-item"><a class="nav-link"
-											style="width: 140px;" href="#">VỀ CHÚNG TÔI</a></li>
-									</ul>
-								</div>
-							</div>
-						</nav>
-					</div>
-				</div>
-				<div class="col-3" id="logo">
-					<img src="../image/iconft.jpg"
-						style="padding-top: 20px; width: 200px;" alt="">
-				</div>
-				<div class="col-4" id="search">
-					<div id="w-left-50">
-						<div class="find">
-							<input type="search" placeholder="TÌM KIẾM SẢN PHẨM">
-							<button type="submit">Search</button>
-						</div>
-					</div>
-					<div id="w-right-50">
-						<a href="#"><i class="bi bi-globe-americas"></i></a> <a href="#"><i
-							class="bi bi-person"></i></a> <a href="#"><i class="bi bi-bag"></i></a>
-					</div>
-
-				</div>
-			</div>
-		</header>
 		<hr>
 		<section class="container">
 			<div class="row mt-5">

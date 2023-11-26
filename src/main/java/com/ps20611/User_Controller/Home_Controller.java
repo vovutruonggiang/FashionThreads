@@ -96,4 +96,19 @@ public class Home_Controller {
 		favouriteService.saveFavourite(id, accountId, productId);
 		return "redirect:/views/home"; // Điều hướng đến trang thành công sau khi lưu dữ liệu
 	}
+	
+	@ModelAttribute("list_ao")
+	public List<Category_Product_Entity> list_ao(){
+		return category_product_dao.list_Ao();
+	}
+	
+	@ModelAttribute("list_aokhoac")
+	public List<Category_Product_Entity> list_aokhoac(){
+		return category_product_dao.list_Aokhoac();
+	}
+	
+	@ModelAttribute("list_aodai")
+	public List<Category_Product_Entity> list_aodai(){
+		return category_product_dao.list_Aodai();
+	}
 }

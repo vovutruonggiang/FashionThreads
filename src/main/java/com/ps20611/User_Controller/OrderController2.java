@@ -42,7 +42,7 @@ public class OrderController2 {
 	@GetMapping("/invoice/dathangthanhcong")
 	public String dathangthanhcong(Model model) {
 		Account_Entity ac = (Account_Entity) session.getAttribute("username");
-		List<Invoice_Entity> orders1 = orderDao.listhdac(ac.getStaff().getId());
+		List<Invoice_Entity> orders1 = orderDao.listhd(ac.getStaff().getId());
 		model.addAttribute("listhd", orders1 );
 		return "/user/jsp/manage_order";
 	}
@@ -50,7 +50,7 @@ public class OrderController2 {
 	@GetMapping("/invoice/dangxuly")
 	public String dangxuly(Model model) {
 		Account_Entity ac = (Account_Entity) session.getAttribute("username");
-		List<Invoice_Entity> orders1 = orderDao.listhdac(ac.getStaff().getId());
+		List<Invoice_Entity> orders1 = orderDao.listhd2(ac.getStaff().getId());
 		model.addAttribute("listhd", orders1 );
 		return "/user/jsp/manage_order";
 	}
@@ -58,7 +58,7 @@ public class OrderController2 {
 	@GetMapping("/invoice/chogiaovan")
 	public String chogiaovan(Model model) {
 		Account_Entity ac = (Account_Entity) session.getAttribute("username");
-		List<Invoice_Entity> orders1 = orderDao.listhdac(ac.getStaff().getId());
+		List<Invoice_Entity> orders1 = orderDao.listhd3(ac.getStaff().getId());
 		model.addAttribute("listhd", orders1 );
 		return "/user/jsp/manage_order";
 	}
@@ -66,7 +66,7 @@ public class OrderController2 {
 	@GetMapping("/invoice/dagui")
 	public String dagui(Model model) {
 		Account_Entity ac = (Account_Entity) session.getAttribute("username");
-		List<Invoice_Entity> orders1 = orderDao.listhdac(ac.getStaff().getId());
+		List<Invoice_Entity> orders1 = orderDao.listhd4(ac.getStaff().getId());
 		model.addAttribute("listhd", orders1 );
 		return "/user/jsp/manage_order";
 	}
@@ -74,7 +74,7 @@ public class OrderController2 {
 	@GetMapping("/invoice/danhanhang")
 	public String danhanhang(Model model) {
 		Account_Entity ac = (Account_Entity) session.getAttribute("username");
-		List<Invoice_Entity> orders1 = orderDao.listhdac(ac.getStaff().getId());
+		List<Invoice_Entity> orders1 = orderDao.listhd5(ac.getStaff().getId());
 		model.addAttribute("listhd", orders1 );
 		return "/user/jsp/manage_order";
 	}
@@ -82,7 +82,7 @@ public class OrderController2 {
 	@GetMapping("/invoice/dahuy")
 	public String dahuy(Model model) {
 		Account_Entity ac = (Account_Entity) session.getAttribute("username");
-		List<Invoice_Entity> orders1 = orderDao.listhdac(ac.getStaff().getId());
+		List<Invoice_Entity> orders1 = orderDao.listhd6(ac.getStaff().getId());
 		model.addAttribute("listhd", orders1 );
 		return "/user/jsp/manage_order";
 	}
@@ -90,7 +90,7 @@ public class OrderController2 {
 	@GetMapping("/invoice/trahang")
 	public String trahang(Model model) {
 		Account_Entity ac = (Account_Entity) session.getAttribute("username");
-		List<Invoice_Entity> orders1 = orderDao.listhdac(ac.getStaff().getId());
+		List<Invoice_Entity> orders1 = orderDao.listhd7(ac.getStaff().getId());
 		model.addAttribute("listhd", orders1 );
 		return "/user/jsp/manage_order";
 	}

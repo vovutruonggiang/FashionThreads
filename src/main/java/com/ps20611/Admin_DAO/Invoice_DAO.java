@@ -18,22 +18,22 @@ public interface Invoice_DAO extends JpaRepository<Invoice_Entity, Integer> {
 	List<Invoice_Entity> listhd(Integer id);
 	
 	@Query("select d from Invoice_Entity d where d.status.id like '%DH2%' and staff_id.id = ?1")
-	List<Invoice_Entity> listhd2();
+	List<Invoice_Entity> listhd2(Integer id);
 	
 	@Query("select d from Invoice_Entity d where d.status.id like '%DH3%' and staff_id.id = ?1")
-	List<Invoice_Entity> listhd3();
+	List<Invoice_Entity> listhd3(Integer id);
 
 	@Query("select d from Invoice_Entity d where d.status.id like '%DH4%' and staff_id.id = ?1")
-	List<Invoice_Entity> listhd4();
+	List<Invoice_Entity> listhd4(Integer id);
 	
 	@Query("select d from Invoice_Entity d where d.status.id like '%DH5%' and staff_id.id = ?1")
-	List<Invoice_Entity> listhd5();
+	List<Invoice_Entity> listhd5(Integer id);
 	
 	@Query("select d from Invoice_Entity d where d.status.id like '%DH6%' and staff_id.id = ?1")
-	List<Invoice_Entity> listhd6();
+	List<Invoice_Entity> listhd6(Integer id);
 	
 	@Query("select d from Invoice_Entity d where d.status.id like '%DH7%' and staff_id.id = ?1")
-	List<Invoice_Entity> listhd7();
+	List<Invoice_Entity> listhd7(Integer id);
 	
 	@Query("select d from Invoice_Entity d where id = ?1")
 	List<Invoice_Entity> listhd8(Integer id);
