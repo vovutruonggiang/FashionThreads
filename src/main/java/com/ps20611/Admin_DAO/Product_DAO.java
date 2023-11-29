@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.ps20611.Entity.Product_Entity;
 
@@ -46,4 +47,12 @@ public interface Product_DAO extends JpaRepository<Product_Entity, Integer> {
 	Set<Product_Entity> getAll();
 	
 	Page<Product_Entity> findAll(Pageable pageable);
+	
+	@Query(value = "SELECT DISTINCT  p.id,p.product_name ,\r\n"
+			+ "p.product_description,p.image,p.import_price,\r\n"
+			+ "p.price,p.status_id,p.brand_id,p.category_product_id,p.date_create\r\n"
+			+ "FROM product p\r\n"
+			+ "JOIN detailed_products dp ON p.id = dp.product_id\r\n"
+			+ "WHERE dp.color_id = :colorId or dp.size_id = :sizeId;",nativeQuery = true)
+	List<Product_Entity> loc(@Param("colorId") Integer colorId, @Param("sizeId") Integer sizeId);
 }

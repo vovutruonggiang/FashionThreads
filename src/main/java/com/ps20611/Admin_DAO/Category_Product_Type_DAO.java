@@ -9,4 +9,6 @@ public interface Category_Product_Type_DAO extends JpaRepository<Category_Produc
 
 	@Query("select c from Category_Product_Type_Entity c WHERE c.category_menu.id = ?1")
 	List<Category_Product_Type_Entity> list_category_product_type (Integer id);
+	@Query("select c from Category_Product_Type_Entity c WHERE c.category_menu.id = :menuId")
+    List<Category_Product_Type_Entity> list_category_product_type (int menuId);
 }

@@ -137,7 +137,7 @@
 							<div id="button" style="margin-top: 20px;">
 
 								<div id="btn-xemthem">
-									<button  class="btn btn-outline-dark">THÊM VÀO GIỎ HÀNG</button>
+									<button class="btn btn-outline-dark">THÊM VÀO GIỎ HÀNG</button>
 
 									<button type="button" class="btn btn-outline-dark">MUA
 										HÀNG</button>

@@ -67,7 +67,11 @@ public class Home_Controller {
 	@RequestMapping("home")
 	public String View_Home(Model model) {
 		model.addAttribute("favorite", new Product_Entity());
-		System.out.println("hello");
+		List<Category_Menu_Entity> menuItems = category_menu_dao.findAll();
+        for (Category_Menu_Entity menuItem : menuItems) {
+            menuItem.setCategory_product_type(category_product_type_dao.list_category_product_type(menuItem.getId()));
+        }
+        model.addAttribute("menuItems", menuItems);
 		return "/user/jsp/home";
 	}
 
@@ -112,4 +116,23 @@ public class Home_Controller {
 	public List<Category_Product_Entity> list_aodai(){
 		return category_product_dao.list_Aodai();
 	}
+	
+//	@Controller
+//	public class menu_controller {
+//	    @Autowired
+//	    Category_Menu_DAO menuDAO;
+//
+//	    @Autowired
+//	    Category_Product_Type_DAO productTypeDAO;
+//
+//	    @GetMapping("/menu") // Sử dụng GetMapping để xử lý request GET
+//	    public String showMenu(Model model) {
+//	        List<Category_Menu_Entity> menuItems = menuDAO.findAll();
+//	        for (Category_Menu_Entity menuItem : menuItems) {
+//	            menuItem.setCategory_product_type(productTypeDAO.list_category_product_type(menuItem.getId()));
+//	        }
+//	        model.addAttribute("menuItems", menuItems);
+//	        return "menu"; // Trả về tên của trang JSP
+//	    }
+//	}
 }

@@ -97,7 +97,7 @@
 													aria-labelledby="headingOne" data-parent="">
 													<div class="card-body">
 														<label> <input type="checkbox"
-															name="clothing-type" value=""><span>S</span>
+															name="" value=""><span>S</span>
 														</label> <label> <input type="checkbox"
 															name="clothing-type" value=""><span>M</span>
 														</label> <label> <input type="checkbox"
@@ -282,7 +282,7 @@
 															<button type="button" class="btn">Bỏ lọc</button>
 														</div>
 														<div class="col-6" id="button-collapse-two">
-															<button type="button" class="btn">Lọc</button>
+															<button formaction="/locsanpham" class="btn">Lọc</button>
 														</div>
 													</div>
 												</div>
@@ -383,7 +383,7 @@
 																<h3 class="title-product">
 																	<a href="">${product.product_name}</a>
 																</h3>
-																<div class="price-product">
+																<div cl	ass="price-product">
 																	<ins>
 																		<span><strong>${product.price}</strong></span>
 																	</ins>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -92,5 +93,11 @@ public class productController {
 
 	    return "/user/jsp/product";
 	}
-
+	
+	@RequestMapping("/locsanpham")
+	public String loc(Model model,@Param("colorId") Integer c,@Param("sizeId") Integer s) {
+		List<Product_Entity> listp = daoProduct.loc(1,1);
+		model.addAttribute("list", listp);
+		return"/user/jsp/product";
+	}
 }

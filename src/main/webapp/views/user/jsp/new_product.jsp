@@ -550,9 +550,9 @@
 														lọc</button>
 												</div>
 												<div class="col-6">
-													<button type="button"
+													<button type="button" 
 														class="btn btn--large but_filter_product"
-														style="font-size: 13px; padding: 10px 20px;">Lọc</button>
+														style="font-size: 13px; padding: 10px 20px;"></button>
 												</div>
 											</div>
 											<p class="required" id="msg_error_size_color"></p>

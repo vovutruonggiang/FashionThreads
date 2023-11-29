@@ -6,10 +6,35 @@
 
 <!DOCTYPE html>
 <html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trang chủ | IVY moda</title>
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/owl/assets/owl.carousel.min.css">
+<!-- === NEW THEME === -->
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/style_02.css?v=14" />
+
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/style.css?v=11" />
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/custom.css?v=5" />
+<script src="https://pubcdn.ivymoda.com/ivy2/js/jquery.min.js"
+	type="text/javascript"></script>
+<!-- jQuery UI -->
+<!-- banner -->
+<script src="https://pubcdn.ivymoda.com/ivy2/js/jquery-ui.min.js"></script>
+<script src="https://pubcdn.ivymoda.com/ivy2/js/affix.js"
+	type="text/javascript"></script>
+	
+
+</head>
 <body>
 	<%@include file="/views/user/layout/header.jsp"%>
-	<main id="main" class="site-main">
-		<div class="container">
+	<main id="main" class="site-main" style="padding-left:80px;padding-right:80px; padding-top:0 !important; ">
+		<div class="container-fluid">
 			<!-- Promotion -->
 			<!-- End Promotion -->
 
@@ -59,7 +84,7 @@
 					<div class="exclusive-head">
 						<ul>
 							<li class="exclusive-tab active arrival-tab"
-								data-cate-slug="hang-nu-moi-ve" data-tab="tab-women">IVY
+data-cate-slug="hang-nu-moi-ve" data-tab="tab-women">IVY
 								moda</li>
 							<li class="exclusive-tab arrival-tab"
 								data-cate-slug="hang-nam-moi-ve" data-tab="tab-men">IVY men
@@ -98,7 +123,7 @@
 													    <input type="hidden" name="id" value="${list_n_p.id}">
 														<input type="hidden" name="account_id" value="${user}">
 											    		<input type="hidden" name="product_id" value="${list_n_p.id}">
-													        <button onclick="onClick()" style="border: none; background-color: transparent;" type="submit"><i class="icon-ic_heart"></i></button>
+													        <button onclick="onClick()" style="border: none; background-color: transparent;" type="submit"><i class="bi bi-heart"></i></button>
 													    </div>
 													</div>
 													<h3 class="title-product">
@@ -126,7 +151,7 @@
 												</div>
 											</div>
 										</div>
-									</form>
+</form>
 								</c:forEach>
 							</div>
 							<div class="link-product">
@@ -198,7 +223,7 @@
 										</div>
 										<div class="add-to-cart">
 											<a href="javascript:void(0)"><i
-												class="icon-ic_shopping-bag"></i></a>
+class="icon-ic_shopping-bag"></i></a>
 										</div>
 										<div class="list-size">
 											<ul>
@@ -273,7 +298,7 @@
 												<li data-product-sub-id="188400"><button
 														class="btn bt-large">6-7</button></li>
 												<li data-product-sub-id="188416"><button
-														class="btn bt-large">8-9</button></li>
+class="btn bt-large">8-9</button></li>
 												<li data-product-sub-id="188427"><button
 														class="btn bt-large">10-11</button></li>
 												<li data-product-sub-id="188440"><button
@@ -353,7 +378,7 @@
 											<h3 class="title-product">
 												<a
 													href="https://ivymoda.com/sanpham/trench-coat-ao-khoac-mang-to-co-dai-ms-71b9547-38811">Trench
-													Coat - Áo khoác Măng Tô có đai</a>
+Coat - Áo khoác Măng Tô có đai</a>
 											</h3>
 											<div class="price-product">
 												<ins>
@@ -428,7 +453,7 @@
 													khoác blazer nam</a>
 											</h3>
 											<div class="price-product">
-												<ins>
+<ins>
 													<span>672.500đ</span>
 												</ins>
 												<del>
@@ -507,7 +532,7 @@
 										</div>
 										<div class="add-to-cart">
 											<a href="javascript:void(0)"><i
-												class="icon-ic_shopping-bag"></i></a>
+class="icon-ic_shopping-bag"></i></a>
 										</div>
 										<div class="list-size">
 											<ul>
@@ -599,7 +624,7 @@
 						<a
 							href="https://ivymoda.com/sanpham/doris-dress-dam-lua-co-k-ms-48m8499-38654">
 							<img
-							src="https://pubcdn.ivymoda.com/files/news/2023/10/23/84122f992c83a8f0046e0cc6242584f2.jpg"
+src="https://pubcdn.ivymoda.com/files/news/2023/10/23/84122f992c83a8f0046e0cc6242584f2.jpg"
 							alt="" class="lazy" />
 						</a>
 					</div>
@@ -673,7 +698,7 @@
 		            }
 		        };
 		    backToTop();
-		    $(window).on('scroll', function () {
+$(window).on('scroll', function () {
 		        backToTop();
 		    });
 		    $('#back-to-top').on('click', function (e) {
@@ -773,7 +798,7 @@
 				title="Chat facebook messenger">
 				<a href="http://messenger.com/t/thoitrangivymoda" target="_blank">
 					<img src="https://pubcdn.ivymoda.com/ivy2/images/support_new5.png"
-					style="vertical-align: middle" />
+style="vertical-align: middle" />
 				</a>
 			</div>
 			<div class="box-icon box-icon-contact" title="Liên hệ">
