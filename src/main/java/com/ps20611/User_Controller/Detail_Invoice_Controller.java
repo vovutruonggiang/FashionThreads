@@ -27,6 +27,6 @@ public class Detail_Invoice_Controller {
 		model.addAttribute("listchitiethd", listdetail_invoice);
 		List<Invoice_Entity> invoice = invoice_dao.listhd8(id);
 		model.addAttribute("tienmat", invoice);
-		return"/user/jsp/detail_invoice";
+		return"user/jsp/detail_invoice";
 	}
 }

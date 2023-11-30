@@ -33,7 +33,7 @@ public class Info_Controller {
 		int id = acc.getStaff().getId();
 		Staff_Entity staffs = staff_dao.findById(id).get();
 		model.addAttribute("staffs", staffs);
-		return "/user/jsp/infor";
+		return "user/jsp/infor";
 	}
 
 	@PostMapping("info/update")

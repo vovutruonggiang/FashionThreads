@@ -3,6 +3,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,6 +26,6 @@ public class Role_Entity implements Serializable {
 	private int id;
 	private String name_role;
 
-	@OneToMany (mappedBy = "role")
+	@OneToMany (mappedBy = "role",fetch = FetchType.EAGER)
 	List<Authorities_Entity> authorities;
 }

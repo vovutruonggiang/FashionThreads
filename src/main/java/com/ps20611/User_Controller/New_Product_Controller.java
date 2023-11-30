@@ -19,7 +19,7 @@ public class New_Product_Controller {
 	
 	@RequestMapping("new-product")
 	public String view_new_product() {
-		return"/user/jsp/new_product";
+		return"user/jsp/new_product";
 	}
 	
 	@ModelAttribute("list_new_product")

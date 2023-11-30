@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Manager_Product_Controller {
 	@RequestMapping("manager-order")
 	public String view_manager_product() {
-		return"/user/jsp/manage_order";
+		return"user/jsp/manage_order";
 	}
 }

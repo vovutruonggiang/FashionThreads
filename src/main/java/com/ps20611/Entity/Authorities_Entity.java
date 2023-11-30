@@ -2,6 +2,7 @@ package com.ps20611.Entity;
 
 import java.io.Serializable;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,7 +27,7 @@ public class Authorities_Entity implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "username_id")
 	private Account_Entity account;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "role_id")
 	private Role_Entity role;
 }

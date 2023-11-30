@@ -2,8 +2,7 @@ package com.ps20611.Entity;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
+ 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -33,11 +32,11 @@ public class Staff_Entity implements Serializable {
 	private String fullname;
 	private String phone_number;
 	private String address;
-	@Pattern(regexp = "^(Nam|Nữ)$")
+	 
 	private Boolean sex;
 	@Temporal(TemporalType.DATE)
 	private String years;
-	@Email
+	 
 	private String email;
 	@ManyToOne
 	@JoinColumn(name = "status_id")

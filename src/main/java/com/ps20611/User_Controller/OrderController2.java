@@ -24,7 +24,7 @@ public class OrderController2 {
 	public String viewOrder(Model model) {
 		List<Invoice_Entity> orders = orderDao.findAll();
 		model.addAttribute("listhd", orders );
-		return "/user/jsp/manage_order";
+		return "user/jsp/manage_order";
 	}
 	
 	@ModelAttribute("listhd")
@@ -36,14 +36,14 @@ public class OrderController2 {
 	public String dathangthanhcong(Model model) {
 		List<Invoice_Entity> orders1 = orderDao.listhd();
 		model.addAttribute("listhd", orders1 );
-		return "/user/jsp/manage_order";
+		return "user/jsp/manage_order";
 	}
 	
 	@GetMapping("/invoice/dangxuly")
 	public String dangxuly(Model model) {
 		List<Invoice_Entity> orders1 = orderDao.listhd2();
 		model.addAttribute("listhd", orders1 );
-		return "/user/jsp/manage_order";
+		return "user/jsp/manage_order";
 	}
 	
 	@GetMapping("/invoice/chogiaovan")

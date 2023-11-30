@@ -66,7 +66,7 @@ public class Detail_Product_Controller {
 		model.addAttribute("listsp", listsp1);
 		List<Image_Entity> listsp2 = dao_image.listimageproduct(id);
 		model.addAttribute("listsp2", listsp2);
-		return "/user/jsp/detail_product";
+		return "user/jsp/detail_product";
 	}
 	
 	@ModelAttribute("list_p_tuongtu")

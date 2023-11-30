@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Loaction_Controller {
 	@RequestMapping("adress")
 	public String view_adress() {
-		return"/user/jsp/location";
+		return"user/jsp/location";
 	}
 }

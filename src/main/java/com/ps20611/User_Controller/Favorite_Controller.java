@@ -20,7 +20,7 @@ public class Favorite_Controller {
 	
 	@RequestMapping("favorite-products")
 	public String view_favorite() {
-		return"/user/jsp/favorite";
+		return"user/jsp/favorite";
 	}
 	
 	@ModelAttribute("list_favorite")

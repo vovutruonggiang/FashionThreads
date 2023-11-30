@@ -26,7 +26,7 @@ public class RegisterController {
 
 	@RequestMapping("/form/register")
 	public String view(@ModelAttribute("register") Staff_Entity s) {
-		return "/user/form_register/register";
+		return "user/form_register/register";
 	}
 
 	@PostMapping("/register/account")

@@ -35,7 +35,7 @@ import com.ps20611.Entity.Product_Entity;
 import com.ps20611.Services.FavouriteService;
 
 @Controller
-@RequestMapping("/views/")
+ @RequestMapping("/views")
 public class Home_Controller {
 	@Autowired
 	Category_Menu_DAO category_menu_dao;
@@ -64,10 +64,10 @@ public class Home_Controller {
 	@Autowired
 	private FavouriteService favouriteService;
 
-	@RequestMapping("home")
+	@RequestMapping("/home")
 	public String View_Home(Model model) {
 		model.addAttribute("favorite", new Product_Entity());
-		return "/user/jsp/home";
+		return "user/jsp/home";
 	}
 
 	@ModelAttribute("list_menu")
