@@ -8,8 +8,8 @@ import com.ps20611.Entity.Color_Entity;
 
 @Repository
 public interface Color_DAO extends JpaRepository<Color_Entity, Integer> {
-	@Query("SELECT c.color_name\r\n" + "FROM Color_Entity c\r\n" + "INNER JOIN c.detailedProducts_Color p\r\n"
-			+ "WHERE p.product_id.id = ?1 \r\n" + "GROUP BY c.color_name, p.product_id.id ORDER BY  c.color_name DESC")
+	@Query("SELECT c.img_color\r\n" + "FROM Color_Entity c\r\n" + "INNER JOIN c.detailedProducts_Color p\r\n"
+			+ "WHERE p.product_id.id = ?1 \r\n" + "GROUP BY c.img_color, p.product_id.id ORDER BY  c.img_color DESC")
 	List<Object[]> findmau(Integer id);
 
 	@Query("SELECT c.img_color\r\n" + "FROM Color_Entity c\r\n" + "INNER JOIN c.detailedProducts_Color p\r\n"

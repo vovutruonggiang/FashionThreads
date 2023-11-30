@@ -47,6 +47,13 @@
 						<i class="fa fa-circle nav-icon" aria-hidden="true"></i>
 						<p>Danh Mục</p>
 				</a></li>
+				
+				<li class="nav-item"><a
+					href="/category" class="nav-link">
+						<i class="fa fa-circle nav-icon" aria-hidden="true"></i>
+						<p>Danh Mục test</p>
+				</a></li>
+				
 				<li class="nav-item"><a
 					href="/views/manage_product_fashion_threads" class="nav-link">
 						<i class="fa fa-circle nav-icon" aria-hidden="true"></i>
