@@ -16,6 +16,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/views/user/css/menu.css">
 <header>
+<h1>hello</h1>
 	<div id="menu">
 		<div id="left-menu"
 			style="width: 33%; float: left; height: 80px; padding-top: 25px">
