@@ -1,181 +1,170 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	
-<body>
-<%-- 	<%@include file="/views/user/layout/header.jsp"%> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+		<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+			<!DOCTYPE html>
+			<html lang="en">
 
-	<div class="container">
+			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Document</title>
+				<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+					integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+					crossorigin="anonymous">
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+					integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+					crossorigin="anonymous"></script>
+				<link rel="stylesheet"
+					href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+				<style>
+					#inputform {
+						margin-top: 20px;
+					}
 
-		<h2 class="breadcrumb text-center">
-			<small> <a href="/cart">Shopping Cart</a> <span
-				class="glyphicon glyphicon-menu-right"></span> <mark>
-					<b>Checkout Details</b>
-				</mark>
-			</small>
-		</h2>
-		<div class="row">
-			<div class="col-xs-8">
-				<div class="panel panel-success">
-					<div class="panel-heading">
-						<h3>Thông Tin Thanh Toán</h3>
+					#inputform button {
+						width: 200px;
+						margin-top: 10px;
+						height: 40px;
+					}
+
+					body {
+						height: 800px;
+					}
+
+					#sumary {
+						margin-top: 60px;
+						border: 1px solid;
+						height: auto;
+						padding: 20px
+					}
+
+					#sumary1 {
+						margin-top: 20px;
+						border: 1px solid;
+						height: auto;
+						padding: 20px
+					}
+
+					#cart-items {
+						margin-bottom: 20px;
+					}
+
+					#cart-total {
+						overflow-y: scroll;
+						height: 200px;
+					}
+				</style>
+			</head>
+
+			<body class="container">
+				<div class="row" style="margin-top: 30px;">
+					<div class="col-8">
+						<form:form action="/checkout/save" method="POST" modelAttribute="invoice">
+							<p style="font-size: 30px;">Chi tiết thanh toán</p>
+							<hr>
+							<h5>1. ĐỊA CHỈ LIÊN LẠC</h5>
+							<div id="inputform" class="input-group mb-3">
+								<span class="input-group-text"><i class="bi bi-person"></i></span>
+								<input type="text" path="accounts" class="form-control" placeholder="Họ tên"
+									readonly="true" value="${username.staff.fullname}">
+							</div>
+							<div id="inputform" class="input-group mb-3">
+								<span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+								<input type="text" class="form-control" placeholder="Địa chỉ" path="delivery_address"
+									readonly="true" value="${username.staff.address}">
+							</div>
+							<div id="inputform" class="input-group mb-3">
+								<span class="input-group-text"><i class="bi bi-telephone"></i></span>
+								<input type="text" class="form-control" placeholder="Số điện thoại" path="accounts"
+									readonly="true" value="${username.staff.phone_number}">
+							</div>
+							<hr>
+							<h5>2. PHƯƠNG THỨC THANH TOÁN</h5>
+							<div id="inputform" class="input-group mb-3">
+								<label class="input-group-text" for="inputGroupSelect01"><i
+										class="bi bi-bank"></i></label>
+										<form:select  class="form-select" id="inputGroupSelect01" path="payment_methods">
+											<form:option value="tiền mặt">tiền mặt</form:option>
+											<form:option value="thẻ">Thẻ</form:option>
+										</form:select>
+							</div>
+							<hr>
+							<h5>3. GHI CHÚ ĐƠN HÀNG</h5>
+							<textarea class="form-control" name="" id="" rows="3"></textarea>
+							<hr>
+							<h5>4. EMAIL THÔNG BÁO</h5>
+							<div id="inputform" class="input-group mb-3">
+								<span class="input-group-text">@</span> <input 	path="accounts" type="email" class="form-control"
+									placeholder="Địa chỉ email" readonly="true" value="${username.staff.email}">
+							</div>
+							<hr>
+							<div id="inputform">
+								<button type="submit" class="btn btn-outline-dark">Đặt hàng</button>
+							</div>
+						</form:form>
 					</div>
-					<div class="panel-body">
-						<form:form action="/checkout/save" method="POST"
-							modelAttribute="invoice">
-							<div hidden=""></div>
-
-							<div class="form-group">
-								<label for="email">Họ và tên * </label> <input
-									path="accounts"  class="form-control form-control-large"
-									id="email" readonly="true" value="${username.staff.fullname}" />
-							</div>
-							
-							<div class="form-group">
-										<label for="email">Địa chỉ Email * </label> <input
-											path="accounts" class="form-control form-control-large"
-											id="email" readonly="true" value="${username.staff.email}" />
-									</div>
-							
-							<div class="form-group">
-								<label for="name">Phương thức thanh toán *</label>
-								<!-- ID Tai khoan  -->
-								<form:select path="payment_methods">
-									<form:option value="tiền mặt">tiền mặt</form:option>
-									<form:option value="thẻ">Thẻ</form:option>
-								</form:select>
-
-							</div>
+					<div class="col-4">
+						<div id="sumary">
+							<p style="font-size: 30px;">Tóm tắt hóa đơn</p>
+							<hr>
 							<div class="row">
-								<div class="col-xs-6">
-									<div class="form-group">
-										<label for="phone">Số Điện Thoại *(bắt buộc)</label>
-										 <input
-											path="accounts" class="form-control form-control-large"
-											id="text" readonly="true" value="${username.staff.phone_number}" />
-									</div>
+								<div class="col-6">
+									<p>Tổng sản phẩm</p>
+									<p>Tổng tiền hàng</p>
+
+								</div>
+								<div class="col-6 text-end">
+									<p>${countQuantity}</p>
+									<p>${countTotalProduct}</p>
+
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="state" class="control-label">Địa chỉ giao
-									hàng * (bắt buộc)</label>
-								<form:textarea type="text" class="form-control" id="state"
-									path="delivery_address"
-									placeholder="Ví dụ: Cầu vượt Quang Trung 1Quận 12, Thành phố Hồ Chí Minh" />
+							<hr>
+							<div class="row">
+								<div class="col-6">
+									<p>Tiền thanh toán</p>
+								</div>
+								<div class="col-6 text-end">
+									<p>
+										<strong>${countTotalProduct}</strong>
+									</p>
+								</div>
 							</div>
- 
-							<div class="well">
-								<button type="submit" class="btn btn-lg btn-success btn-block">Đặt
-									Hàng</button>
-							</div>
-
-						</form:form>
-
-
-
-					</div>
-					<div class="col-xs-4">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<h3>Đơn Hàng Của Bạn</h3>
-							</div>
-							<div class="panel-body" style="width: 1000px">
-
-								<table class="table col-sm-3" style="height: 500px">
-									<thead>
-										<tr>
-
-											<th hidden="" scope="col">ID</th>
-											<th scope="col" style="width: 300px">Tên sản phẩm</th>
-											<th scope="col" style="width: 300px">Giá sản phẩm</th>
-											<th scope="col" style="width: 300px">Số lượng sản phẩm</th>
-											<th scope="col" style="width: 300px">Giảm giá</th>
-											<th scope="col" style="width: 300px">Hình sản phẩm</th>
-										</tr>
-									</thead>
-									<tbody>
-
+						</div>
+						<div id="sumary1">
+							<div>
+								<div class="row" id="cart-items">
+									<div class="container" id="cart-total">
 										<c:forEach items="${cart}" var="c">
+											<div class="row" id="cart-items">
+												<div class="col-5">
+													<img src="/views/image/${c.product.image}" alt=""
+														style="width: 100%;">
+												</div>
+												<div class="col-7 " id="cart">
+													<p style="font-weight: 500;">${c.product.product_name}</p>
+													<p>Màu sắc: ${c.color}</p>
+													<p>Size: ${c.size}</p>
+													<input type="number" value="${c.quantity}" class="form-control"
+														name="" id=""
+														style="width: 60px; height: 30px; margin-top: 10px;">
+													<span style="float: right; font-weight: bold;">${(c.price *
+														c.quantity).intValue() }</span>
 
-											<tr>
-												<td style="width: 600px;">
-													<div class="row">
-														<div class="col-3">
-															<img src="/images/${c.product.image}" alt=""
-																style="width: 100%;">
-														</div>
-														<div class="col-9">
-															<p style="font-weight: 500;">${c.product.product_name}</p>
-															<span>Màu sắc: ${c.color} </span><span
-																style="margin-left: 5%;">Size: ${c.size} </span>
-														</div>
-													</div>
-
-												</td>
-												<td><input class="form-control" name="soluong"
-													id="soluong" style="width: 80px;" type="number" min="1"
-													value="${c.quantity}"></td>
-
-
-
-												<!-- Đếm số lượng sản phẩm trong giỏ hàng -->
-
-
-
-												<td>${(c.price * c.quantity).intValue() }</td>
-
-
-												<td><strong> </strong></td>
-												<td><a href="/views/cart/delete/${c.product.id}"
-													style="text-decoration: none; color: red;" href=""><i
-														class="bi bi-trash3"></i></a></td>
-											</tr>
+												</div>
+											</div>
 										</c:forEach>
 
-										<tr>
-											<td></td>
-											<td></td>
 
-										</tr>
-									</tbody>
-
-									<tfoot>
-										<tr>
-											<td>Tổng Sản Phẩm:</td>
-											<td></td>
-											<td><b>${countQuantity}</b></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr>
-											<td><h4>Tổng Tiền</h4></td>
-											<td></td>
-											<td align="right" style="color: red"><h4>${countTotalProduct}
-													VNĐ</h4></td>
-											<td></td>
-											<td></td>
-										</tr>
-									</tfoot>
-								</table>
-								<hr>
-								<b>Trả tiền mặt khi nhận hàng (Hóa đơn chưa kèm phí ship.
-									Quý khách vui lòng thanh toán thêm phí ship khi nhận hàng)</b>
-								<hr>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
 
 
+			</body>
 
-			<%@include file="/views/user/layout/footer.jsp"%>
-</body>
-</html>
+			</html>

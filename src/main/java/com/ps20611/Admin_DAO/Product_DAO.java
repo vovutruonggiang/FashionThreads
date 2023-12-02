@@ -21,7 +21,7 @@ public interface Product_DAO extends JpaRepository<Product_Entity, Integer> {
 			+ "WHERE date_create >= DATEADD(DAY, -30, GETDATE());",
 			nativeQuery = true)
 	List<Product_Entity> list_new_product();
-//	
+		
 //	@Query(value = "select * from product \r\n"
 //			+ "inner join detailed_products\r\n"
 //			+ "on product.id = detailed_products.product_id \r\n"
@@ -55,4 +55,7 @@ public interface Product_DAO extends JpaRepository<Product_Entity, Integer> {
 			+ "JOIN detailed_products dp ON p.id = dp.product_id\r\n"
 			+ "WHERE dp.color_id = :colorId or dp.size_id = :sizeId;",nativeQuery = true)
 	List<Product_Entity> loc(@Param("colorId") Integer colorId, @Param("sizeId") Integer sizeId);
+	
+	@Query(value = "select * from product where category_product_id = ?1",nativeQuery = true)
+	List<Product_Entity> list_p_category(Integer id);
 }

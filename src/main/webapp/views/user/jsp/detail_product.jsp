@@ -26,13 +26,18 @@
 	crossorigin="anonymous"></script>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<!-- 	bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
 </head>
 
 <body>
 	<%@include file="/views/user/layout/header.jsp"%>
-	<form action="/cart/add/${detail.id}" method="post">
+	<form action="/cart/add/${detail.id}" method="post" style="padding-left:80px;padding-right:80px; padding-top:0 !important;margin-top:0px !important;">
 		<hr>
-		<section class="container">
+		<section class="container-fluid">
 			<div class="row mt-5">
 				<div class="col-6">
 					<div class="row">
@@ -66,12 +71,10 @@
 				</div>
 				<div class="col-6 ">
 					<c:forEach var="if_p" items="${listsp}">
-						<div id="infor_product">
-							<h3>${if_p.product_name}</h3>
-							<p>${if_p.id}</p>
-							<b>${if_p.price}</b>
-							<p class="text-color">Màu sắc : Đỏ mận</p>
-
+						<div id="infor_product" style="font-family: 'Montserrat';">
+							<h2 style="text-transform: uppercase;font-weight: 600;color: #221f20;">${if_p.product_name}</h1>
+							<p style="font-size: 20px;">SKU: ${if_p.id}2BA27</p>
+							<p style="font-size: 24px;;font-weight: 600;color: #221f20;">${if_p.price}đ</p>							
 							<%-- <div id="radio_button">
 											<c:forEach var="color" items="${if_p.detailedProducts_Product}">
 												<input type="r	adio" name="color" id="${color.color_id.color_name}"
@@ -81,27 +84,28 @@
 											</c:forEach>
 										</div> --%>
 							<c:set var="myVariable" value="${if_p.category_product.id}" />
-							<h3 class="mausac">Màu sắc</h3>
+							<span style="font-size: 20px;;font-weight: 600;color: #221f20;" class="mausac">Màu sắc:</span>
 
-							<div id="radio_button">
+							<div id="radio_button1">							
 								<c:forEach items="${color}" var="c">
 									<input type="radio" name="color" value="${c}" id="${c}"
 										checked="checked">
-									<label for="${c}">${c}</label>
+									<label id="label1" for="${c}"><image style="border-radius: 100%; width:30px" alt="" src="/views/image/color/${c }"></label>
 								</c:forEach>
 							</div>
 
 
-							<h3 class="kichthuoc">Kích thước</h3>
+							<h3 style="font-size: 20px;;font-weight: 600;color: #221f20;" class="kichthuoc">Kích thước:</h3>
 
 
-							<div id="radio_button">
+							<div  id="radio_button2">
 								<c:forEach items="${size}" var="s">
 									<input type="radio" name="size" value="${s}" id="${s}"
 										checked="checked">
-									<label for="${s}">${s}</label>
+									<label id="label2" style="padding-left:25px" for="${s}">${s}</label>
 								</c:forEach>
 							</div>
+							<a><i style="color: grey;" class="bi bi-rulers"></i> Hướng dẫn chọn kích thước</a>
 
 
 							<%-- <div id="radio_button">
@@ -111,7 +115,7 @@
 								</c:forEach>
 							</div> --%>
 
-							<h3 class="soluong">Số lượng</h3>
+							<h3 style="font-size: 20px;;font-weight: 600;color: #221f20;" class="soluong">Số lượng</h3>
 							<div id="buy-amount">
 								<button class="minus-btn" onclick="handleMinus()">
 									<svg xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -137,7 +141,7 @@
 							<div id="button" style="margin-top: 20px;">
 
 								<div id="btn-xemthem">
-									<button class="btn btn-outline-dark">THÊM VÀO GIỎ HÀNG</button>
+									<button  class="btn btn-outline-dark">THÊM VÀO GIỎ HÀNG</button>
 
 									<button type="button" class="btn btn-outline-dark">MUA
 										HÀNG</button>
@@ -169,13 +173,55 @@
 										phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện
 										ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/
 										điện thoại.</p>
-									<label id="buttonchitiet" for="ch">Ít hơn</label>
+									<label id="buttonchitiet" for="ch">------------------------------------ Ít hơn ----------------------------------</label>
 								</div>
-								<label id="buttonchitiet" for="ch">Xem thêm</label>
+								<label id="buttonchitiet" for="ch">---------------------------------- Xem thêm ------------------------------</label>
 							</div>
 						</div>
 					</c:forEach>
 				</div>
+				
+<!--         <div class="testimonial-box"> -->
+<!--             top----------------------- -->
+<!--             <div class="box-top"> -->
+<!--                 profile--- -->
+<!--                 <div class="profile"> -->
+<!--                     img-- -->
+<!--                     <div class="profile-img"> -->
+<!--                         <img src="../image/banner-vertical.jpg" /> -->
+<!--                     </div> -->
+<!--                     name-and-username -->
+<!--                     <div class="name-user"> -->
+<!--                         <strong>Võ Vũ Trường Giang</strong> -->
+<!--                         <span>Giang_beo_2003</span> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 reviews---- -->
+<!--                 <div class="wrapper"> -->
+<%--                     <form action=""> --%>
+<!--                         <div class="rating"> -->
+<!--                             <input type="number" name="rating" hidden> -->
+<!--                             <i class='bx bx-star star' style="--i: 0;"></i> -->
+<!--                             <i class='bx bx-star star' style="--i: 1;"></i> -->
+<!--                             <i class='bx bx-star star' style="--i: 2;"></i> -->
+<!--                             <i class='bx bx-star star' style="--i: 3;"></i> -->
+<!--                             <i class='bx bx-star star' style="--i: 4;"></i> -->
+<!--                         </div> -->
+<!--                         Comments-------------------------------------- -->
+<!--                         <div> -->
+<!--                             <textarea name="opinion" cols="65" rows="5" placeholder=""></textarea> -->
+<!--                         </div> -->
+<!--                         <div class="button-right"> -->
+<!--                             <button type="submit" class="btn btn-primary">Submit</button> -->
+<!--                             <button type="submit" class="btn btn-danger">Cannel</button> -->
+<!--                         </div> -->
+<!--                         <div class="button-left"> -->
+<!--                             <button type="submit" class="btn btn-secondary">Edit</button> -->
+<!--                         </div> -->
+<%--                     </form> --%>
+<!--                 </div> -->
+<!--             </div> -->
+<!--         </div> -->
 				<h1 class="sanphamtuongtu">Sản phẩm tương tự</h1>
 
 				<div class="row" id="dssp">
@@ -202,6 +248,7 @@
 						</c:choose>
 					</c:forEach>
 				</div>
+				
 
 				<h1 class="sanphamtuongtu">Sản phẩm đã xem</h1>
 
@@ -347,5 +394,6 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
+<script src="/views/user/js/review.js"></script>
 
 </html>

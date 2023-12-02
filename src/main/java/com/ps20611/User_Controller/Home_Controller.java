@@ -68,27 +68,27 @@ public class Home_Controller {
 	public String View_Home(Model model) {
 		model.addAttribute("favorite", new Product_Entity());
 		List<Category_Menu_Entity> menuItems = category_menu_dao.findAll();
-        for (Category_Menu_Entity menuItem : menuItems) {
-            menuItem.setCategory_product_type(category_product_type_dao.list_category_product_type(menuItem.getId()));
-        }
-        model.addAttribute("menuItems", menuItems);
+		for (Category_Menu_Entity menuItem : menuItems) {
+			menuItem.setCategory_product_type(category_product_type_dao.list_category_product_type(menuItem.getId()));
+		}
+		model.addAttribute("menuItems", menuItems);
 		return "/user/jsp/home";
 	}
 
-	@ModelAttribute("list_menu")
-	public List<Category_Menu_Entity> list_menu() {
-		return category_menu_dao.findAll();
-	}
-
-	@ModelAttribute("list_product_type")
-	public List<Category_Product_Type_Entity> list_product_type() {
-		return category_product_type_dao.findAll();
-	}
-
-	@ModelAttribute("list_product")
-	public List<Category_Product_Entity> list_product() {
-		return category_product_dao.findAll();
-	}
+//	@ModelAttribute("list_menu")
+//	public List<Category_Menu_Entity> list_menu() {
+//		return category_menu_dao.findAll();
+//	}
+//
+//	@ModelAttribute("list_product_type")
+//	public List<Category_Product_Type_Entity> list_product_type() {
+//		return category_product_type_dao.findAll();
+//	}
+//
+//	@ModelAttribute("list_product")
+//	public List<Category_Product_Entity> list_product() {
+//		return category_product_dao.findAll();
+//	}
 
 	@ModelAttribute("list_new_product")
 	public List<Product_Entity> list_new_product() {
@@ -101,38 +101,4 @@ public class Home_Controller {
 		favouriteService.saveFavourite(id, accountId, productId);
 		return "redirect:/views/home"; // Điều hướng đến trang thành công sau khi lưu dữ liệu
 	}
-	
-	@ModelAttribute("list_ao")
-	public List<Category_Product_Entity> list_ao(){
-		return category_product_dao.list_Ao();
-	}
-	
-	@ModelAttribute("list_aokhoac")
-	public List<Category_Product_Entity> list_aokhoac(){
-		return category_product_dao.list_Aokhoac();
-	}
-	
-	@ModelAttribute("list_aodai")
-	public List<Category_Product_Entity> list_aodai(){
-		return category_product_dao.list_Aodai();
-	}
-	
-//	@Controller
-//	public class menu_controller {
-//	    @Autowired
-//	    Category_Menu_DAO menuDAO;
-//
-//	    @Autowired
-//	    Category_Product_Type_DAO productTypeDAO;
-//
-//	    @GetMapping("/menu") // Sử dụng GetMapping để xử lý request GET
-//	    public String showMenu(Model model) {
-//	        List<Category_Menu_Entity> menuItems = menuDAO.findAll();
-//	        for (Category_Menu_Entity menuItem : menuItems) {
-//	            menuItem.setCategory_product_type(productTypeDAO.list_category_product_type(menuItem.getId()));
-//	        }
-//	        model.addAttribute("menuItems", menuItems);
-//	        return "menu"; // Trả về tên của trang JSP
-//	    }
-//	}
 }

@@ -3,7 +3,25 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/views/user/css/menu.css">
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
 
@@ -28,12 +46,13 @@
 <script src="https://pubcdn.ivymoda.com/ivy2/js/jquery-ui.min.js"></script>
 <script src="https://pubcdn.ivymoda.com/ivy2/js/affix.js"
 	type="text/javascript"></script>
-	
+
 
 </head>
 <body>
 	<%@include file="/views/user/layout/header.jsp"%>
-	<main id="main" class="site-main" style="padding-left:80px;padding-right:80px; padding-top:0 !important; ">
+	<main id="main" class="site-main"
+		style="padding-left: 80px; padding-right: 80px; padding-top: 0 !important;">
 		<div class="container-fluid">
 			<!-- Promotion -->
 			<!-- End Promotion -->
@@ -84,7 +103,7 @@
 					<div class="exclusive-head">
 						<ul>
 							<li class="exclusive-tab active arrival-tab"
-data-cate-slug="hang-nu-moi-ve" data-tab="tab-women">IVY
+								data-cate-slug="hang-nu-moi-ve" data-tab="tab-women">IVY
 								moda</li>
 							<li class="exclusive-tab arrival-tab"
 								data-cate-slug="hang-nam-moi-ve" data-tab="tab-men">IVY men
@@ -102,7 +121,8 @@ data-cate-slug="hang-nu-moi-ve" data-tab="tab-women">IVY
 										<div class="item-new-prod">
 											<div class="product">
 												<div class="thumb-product">
-													<a href="/product/detail/${list_n_p.id}"> <img src="/views/image/${list_n_p.image}"
+													<a href="/product/detail/${list_n_p.id}"> <img
+														src="/views/image/${list_n_p.image}"
 														alt="Single Breasted Set" class="lazy" /> <!-- <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/10/23/c4b8e47d2488dff5d0a910520c306f57.jpg" -->
 														<!--alt="Single Breasted Set" class="hover-img lazy" /> -->
 													</a>
@@ -119,12 +139,17 @@ data-cate-slug="hang-nu-moi-ve" data-tab="tab-women">IVY
 																</a></li>
 															</c:forEach>
 														</ul>
-													    <div class="favourite">
-													    <input type="hidden" name="id" value="${list_n_p.id}">
-														<input type="hidden" name="account_id" value="${user}">
-											    		<input type="hidden" name="product_id" value="${list_n_p.id}">
-													        <button onclick="onClick()" style="border: none; background-color: transparent;" type="submit"><i class="bi bi-heart"></i></button>
-													    </div>
+														<div class="favourite">
+															<input type="hidden" name="id" value="${list_n_p.id}">
+															<input type="hidden" name="account_id" value="${user}">
+															<input type="hidden" name="product_id"
+																value="${list_n_p.id}">
+															<button onclick="onClick()"
+																style="border: none; background-color: transparent;"
+																type="submit">
+																<i class="bi bi-heart"></i>
+															</button>
+														</div>
 													</div>
 													<h3 class="title-product">
 														<a
@@ -151,7 +176,7 @@ data-cate-slug="hang-nu-moi-ve" data-tab="tab-women">IVY
 												</div>
 											</div>
 										</div>
-</form>
+									</form>
 								</c:forEach>
 							</div>
 							<div class="link-product">
@@ -160,83 +185,68 @@ data-cate-slug="hang-nu-moi-ve" data-tab="tab-women">IVY
 						</div>
 						<div class="exclusive-inner" id="tab-men">
 							<div class="list-products new-prod-slider owl-carousel">
-								<div class="item-new-prod">
-									<div class="product">
-										<span class="badget badget_03">-75<span>%</span></span>
-										<div class="thumb-product">
-											<a
-												href="https://ivymoda.com/sanpham/ao-vest-co-hai-ve-ms-67e2741-25952">
-												<img
-												src="https://pubcdn.ivymoda.com/files/product/thumab/400/2020/10/16/cd9044f5aa244fe3df9c359e88c06583.JPG"
-												alt="Áo vest cổ hai ve" class="lazy" /> <img
-												src="https://pubcdn.ivymoda.com/files/product/thumab/400/2020/10/16/cd9044f5aa244fe3df9c359e88c06583.JPG"
-												alt="Áo vest cổ hai ve" class="hover-img lazy" />
-											</a>
-										</div>
-<%-- 										<div>${username.id}</div> --%>
-										<div class="info-product">
-											<div class="list-color">
-												<ul>
-													<li class="checked"><a href="javascript:void(0)"
-														class="color-picker" data-id="25952"> <img
-															src="https://pubcdn.ivymoda.com/ivy2/images/color/005.png"
-															alt="005" class="lazy" />
-													</a></li>
-													<li><a href="javascript:void(0)" class="color-picker"
-														data-id="25953"> <img
-															src="https://pubcdn.ivymoda.com/ivy2/images/color/024.png"
-															alt="024" class="lazy" />
-													</a></li>
-													<li><a href="javascript:void(0)" class="color-picker"
-														data-id="25954"> <img
-															src="https://pubcdn.ivymoda.com/ivy2/images/color/k01.png"
-															alt="k01" class="lazy" />
-													</a></li>
-													<li><a href="javascript:void(0)" class="color-picker"
-														data-id="25955"> <img
-															src="https://pubcdn.ivymoda.com/ivy2/images/color/k03.png"
-															alt="k03" class="lazy" />
-													</a></li>
-													<li><a href="javascript:void(0)" class="color-picker"
-														data-id="25956"> <img
-															src="https://pubcdn.ivymoda.com/ivy2/images/color/k49.png"
-															alt="k49" class="lazy" />
-													</a></li>
-												</ul>
-												<div class="favourite" data-id="25952">
-													<i class="icon-ic_heart"></i>
+								<c:forEach var="list_n_p" items="${list_new_product}">
+									<form action="/views/home/favorite" method="post">
+										<div class="item-new-prod">
+											<div class="product">
+												<div class="thumb-product">
+													<a href="/product/detail/${list_n_p.id}"> <img
+														src="/views/image/Nam/Áo Polo Nam - Áo Thun Poloman Đẹp Hàng Hiệu Tại Hà Nội _ IVY moda/${list_n_p.image}"
+														alt="Single Breasted Set" class="lazy" /> <!-- <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/10/23/c4b8e47d2488dff5d0a910520c306f57.jpg" -->
+														<!--alt="Single Breasted Set" class="hover-img lazy" /> -->
+													</a>
+												</div>
+												<div class="info-product">
+													<div class="list-color">
+														<ul>
+															<c:forEach var="color"
+																items="${list_n_p.detailedProducts_Product}">
+																<li class="checked"><a href="javascript:void(0)"
+																	class="color-picker"> <img
+																		src="/views/image/color/${color.color_id.img_color}"
+																		alt="001" class="lazy" />
+																</a></li>
+															</c:forEach>
+														</ul>
+														<div class="favourite">
+															<input type="hidden" name="id" value="${list_n_p.id}">
+															<input type="hidden" name="account_id" value="${user}">
+															<input type="hidden" name="product_id"
+																value="${list_n_p.id}">
+															<button onclick="onClick()"
+																style="border: none; background-color: transparent;"
+																type="submit">
+																<i class="bi bi-heart"></i>
+															</button>
+														</div>
+													</div>
+													<h3 class="title-product">
+														<a
+															href="https://ivymoda.com/sanpham/single-breasted-set-ms-67m8480-38771">${list_n_p.product_name}</a>
+													</h3>
+													<div class="price-product">
+														<ins>
+															<span>${list_n_p.price}đ</span>
+														</ins>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<a href="javascript:void(0)"><i
+														class="icon-ic_shopping-bag"></i></a>
+												</div>
+												<div class="list-size">
+													<ul>
+														<c:forEach var="size"
+															items="${list_n_p.detailedProducts_Product}">
+															<li data-product-sub-id="188710"><button
+																	class="btn bt-large">${size.size_id.size_name}</button></li>
+														</c:forEach>
+													</ul>
 												</div>
 											</div>
-											<h3 class="title-product">
-												<a
-													href="https://ivymoda.com/sanpham/ao-vest-co-hai-ve-ms-67e2741-25952">Áo
-													vest cổ hai ve</a>
-											</h3>
-											<div class="price-product">
-												<ins>
-													<span>800.000đ</span>
-												</ins>
-												<del>
-													<span>3.200.000đ</span>
-												</del>
-											</div>
 										</div>
-										<div class="add-to-cart">
-											<a href="javascript:void(0)"><i
-class="icon-ic_shopping-bag"></i></a>
-										</div>
-										<div class="list-size">
-											<ul>
-												<li data-product-sub-id="139332"><button
-														class="btn bt-large">s</button></li>
-												<li data-product-sub-id="139337"><button
-														class="btn bt-large">m</button></li>
-												<li data-product-sub-id="139342"><button
-														class="btn bt-large">l</button></li>
-											</ul>
-										</div>
-									</div>
-								</div>
+									</form>
+								</c:forEach>
 							</div>
 							<div class="link-product">
 								<a href="https://ivymoda.com/danh-muc/hang-nam-moi-ve"
@@ -245,68 +255,68 @@ class="icon-ic_shopping-bag"></i></a>
 						</div>
 						<div class="exclusive-inner" id="tab-kid">
 							<div class="list-products new-prod-slider owl-carousel">
-								<div class="item-new-prod">
-									<div class="product">
-										<div class="info-ticket ticket-news">NEW</div>
-										<div class="thumb-product">
-											<a
-												href="https://ivymoda.com/sanpham/zuyp-2-lop-pretty-ms-31g1658-38712">
-												<img
-												src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/10/16/f1311b08999adb8f81e022597e4ed35e.jpg"
-												alt="Zuýp 2 lớp Pretty" class="lazy" /> <img
-												src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/10/12/9c07042f8688922af7f5bfd7de699ca0.jpg"
-												alt="Zuýp 2 lớp Pretty" class="hover-img lazy" />
-											</a>
-										</div>
-										<div class="info-product">
-											<div class="list-color">
-												<ul>
-													<li class="checked"><a href="javascript:void(0)"
-														class="color-picker" data-id="38712"> <img
-															src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png"
-															alt="001" class="lazy" />
-													</a></li>
-													<li><a href="javascript:void(0)" class="color-picker"
-														data-id="38713"> <img
-															src="https://pubcdn.ivymoda.com/ivy2/images/color/057.png"
-															alt="057" class="lazy" />
-													</a></li>
-												</ul>
-												<div class="favourite" data-id="38712">
-													<i class="icon-ic_heart"></i>
+								<c:forEach var="list_n_p" items="${list_new_product}">
+									<form action="/views/home/favorite" method="post">
+										<div class="item-new-prod">
+											<div class="product">
+												<div class="thumb-product">
+													<a href="/product/detail/${list_n_p.id}"> <img
+														src="/views/image/${list_n_p.image}"
+														alt="Single Breasted Set" class="lazy" /> <!-- <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/10/23/c4b8e47d2488dff5d0a910520c306f57.jpg" -->
+														<!--alt="Single Breasted Set" class="hover-img lazy" /> -->
+													</a>
+												</div>
+												<div class="info-product">
+													<div class="list-color">
+														<ul>
+															<c:forEach var="color"
+																items="${list_n_p.detailedProducts_Product}">
+																<li class="checked"><a href="javascript:void(0)"
+																	class="color-picker"> <img
+																		src="/views/image/color/${color.color_id.img_color}"
+																		alt="001" class="lazy" />
+																</a></li>
+															</c:forEach>
+														</ul>
+														<div class="favourite">
+															<input type="hidden" name="id" value="${list_n_p.id}">
+															<input type="hidden" name="account_id" value="${user}">
+															<input type="hidden" name="product_id"
+																value="${list_n_p.id}">
+															<button onclick="onClick()"
+																style="border: none; background-color: transparent;"
+																type="submit">
+																<i class="bi bi-heart"></i>
+															</button>
+														</div>
+													</div>
+													<h3 class="title-product">
+														<a
+															href="https://ivymoda.com/sanpham/single-breasted-set-ms-67m8480-38771">${list_n_p.product_name}</a>
+													</h3>
+													<div class="price-product">
+														<ins>
+															<span>${list_n_p.price}đ</span>
+														</ins>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<a href="javascript:void(0)"><i
+														class="icon-ic_shopping-bag"></i></a>
+												</div>
+												<div class="list-size">
+													<ul>
+														<c:forEach var="size"
+															items="${list_n_p.detailedProducts_Product}">
+															<li data-product-sub-id="188710"><button
+																	class="btn bt-large">${size.size_id.size_name}</button></li>
+														</c:forEach>
+													</ul>
 												</div>
 											</div>
-											<h3 class="title-product">
-												<a
-													href="https://ivymoda.com/sanpham/zuyp-2-lop-pretty-ms-31g1658-38712">Zuýp
-													2 lớp Pretty</a>
-											</h3>
-											<div class="price-product">
-												<ins>
-													<span>399.000đ</span>
-												</ins>
-											</div>
 										</div>
-										<div class="add-to-cart">
-											<a href="javascript:void(0)"><i
-												class="icon-ic_shopping-bag"></i></a>
-										</div>
-										<div class="list-size">
-											<ul>
-												<li data-product-sub-id="188389"><button
-														class="btn bt-large">4-5</button></li>
-												<li data-product-sub-id="188400"><button
-														class="btn bt-large">6-7</button></li>
-												<li data-product-sub-id="188416"><button
-class="btn bt-large">8-9</button></li>
-												<li data-product-sub-id="188427"><button
-														class="btn bt-large">10-11</button></li>
-												<li data-product-sub-id="188440"><button
-														class="btn bt-large">12-13</button></li>
-											</ul>
-										</div>
-									</div>
-								</div>
+									</form>
+								</c:forEach>
 							</div>
 							<div class="link-product">
 								<a href="https://ivymoda.com/danh-muc/hang-moi-ve-tre-em"
@@ -378,7 +388,7 @@ class="btn bt-large">8-9</button></li>
 											<h3 class="title-product">
 												<a
 													href="https://ivymoda.com/sanpham/trench-coat-ao-khoac-mang-to-co-dai-ms-71b9547-38811">Trench
-Coat - Áo khoác Măng Tô có đai</a>
+													Coat - Áo khoác Măng Tô có đai</a>
 											</h3>
 											<div class="price-product">
 												<ins>
@@ -453,7 +463,7 @@ Coat - Áo khoác Măng Tô có đai</a>
 													khoác blazer nam</a>
 											</h3>
 											<div class="price-product">
-<ins>
+												<ins>
 													<span>672.500đ</span>
 												</ins>
 												<del>
@@ -532,7 +542,7 @@ Coat - Áo khoác Măng Tô có đai</a>
 										</div>
 										<div class="add-to-cart">
 											<a href="javascript:void(0)"><i
-class="icon-ic_shopping-bag"></i></a>
+												class="icon-ic_shopping-bag"></i></a>
 										</div>
 										<div class="list-size">
 											<ul>
@@ -624,7 +634,7 @@ class="icon-ic_shopping-bag"></i></a>
 						<a
 							href="https://ivymoda.com/sanpham/doris-dress-dam-lua-co-k-ms-48m8499-38654">
 							<img
-src="https://pubcdn.ivymoda.com/files/news/2023/10/23/84122f992c83a8f0046e0cc6242584f2.jpg"
+							src="https://pubcdn.ivymoda.com/files/news/2023/10/23/84122f992c83a8f0046e0cc6242584f2.jpg"
 							alt="" class="lazy" />
 						</a>
 					</div>
@@ -698,7 +708,7 @@ src="https://pubcdn.ivymoda.com/files/news/2023/10/23/84122f992c83a8f0046e0cc624
 		            }
 		        };
 		    backToTop();
-$(window).on('scroll', function () {
+		$(window).on('scroll', function () {
 		        backToTop();
 		    });
 		    $('#back-to-top').on('click', function (e) {
@@ -798,7 +808,7 @@ $(window).on('scroll', function () {
 				title="Chat facebook messenger">
 				<a href="http://messenger.com/t/thoitrangivymoda" target="_blank">
 					<img src="https://pubcdn.ivymoda.com/ivy2/images/support_new5.png"
-style="vertical-align: middle" />
+					style="vertical-align: middle" />
 				</a>
 			</div>
 			<div class="box-icon box-icon-contact" title="Liên hệ">
@@ -826,11 +836,11 @@ style="vertical-align: middle" />
 			</div>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript">
 		function onClick() {
 			alert("Đã thêm vào danh sách yêu thích")
-		}	
+		}
 	</script>
 </body>
 

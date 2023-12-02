@@ -203,45 +203,96 @@ header {
 }
 
 /* radio button */
-#radio_button input[type="radio"] {
+#radio_button1 input[type="radio"] {
     display: none;
 }
 
-#radio_button label {
+#radio_button2 input[type="radio"] {
+    display: none;
+}
+
+#radio_button1 #label1 {
     position: relative;
     color: #545454;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
     display: inline-flex;
     gap: 0.8em;
-    border: 1px solid #787878;
+    border: 3px solid #787878;
     align-items: center;
-    padding: 1em 1em;
-    border-radius: 0.5em;
-    width: 120px;
+    width: 40px;
+    height: 40px;
+    padding-left: 2.5px;
     margin-top: 20px;
     margin-right: 15px;
+    border-radius: 100px;
 }
 
-#radio_button label:before {
-    content: "";
-    height: 2em;
-    width: 2em;
-    border: 3px solid #7c7c7c;
-    border-radius: 50%;    
+
+/*#radio_button label:before {*/
+/*    content: "";*/
+/*    height: 1em;*/
+/*    width: 1em;*/
+/*    border: 3px solid #7c7c7c;*/
+/*    border-radius: 70%;    */
+/*}*/
+
+#radio_button1 input[type="radio"]:checked + #label1:before {
+    height: 100px;
+    width: 100px;
+    border: 3px solid #ffffff;
+    background-color:rgb(0, 0, 0);  
 }
 
-#radio_button input[type="radio"]:checked + label:before {
-    height: 2em;
-    width: 2em;
-    border: 0.65em solid #ffffff;
-    background-color: #bebebe;  
-}
-
-#radio_button input[type="radio"]:checked + label {
-    background-color: #c8cbce;
+#radio_button1 input[type="radio"]:checked + #label1 {
+	content: "\2713";
+    background-color:#2b2a4c;
     color: #ffffff;
 }
+
+#radio_button2 #label2 {
+    position: relative;
+    color: #545454;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 0.8em;
+    border: 1px ridge #787878;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-size:20px;
+    
+}
+
+
+/*#radio_button label:before {*/
+/*    content: "";*/
+/*    height: 1em;*/
+/*    width: 1em;*/
+/*    border: 3px solid #7c7c7c;*/
+/*    border-radius: 70%;    */
+/*}*/
+
+#radio_button2 input[type="radio"]:checked + #label2:before {
+    height: 100px;
+    width: 100px;
+    border: 3px solid #ffffff;
+    background-color:rgb(0, 0, 0);  
+}
+
+#radio_button2 input[type="radio"]:checked + #label2 {
+	
+    background-color: #F4F4F4;
+    color: rgb(0, 0, 0);
+}
+
+
+
 /* tang giam so luong */
 #buy-amount {
     display: flex;
@@ -309,8 +360,8 @@ header {
 #buttonchitiet{
     display: inline-block;
     cursor: pointer;
-    color: #fff;
-    background-color: aquamarine;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     padding: 3px 13px;
     border-radius: 3px;
     margin-top: 12px;
@@ -363,3 +414,148 @@ header {
 }
 
 #more {display: none;}
+/*binhf luận của hà*/
+#testimonials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .testimonial-heading {
+        letter-spacing: 1px;
+        margin: 30px 0px;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .testimonial-heading h1 {
+        font-size: 2.2rem;
+        font-weight: 500;
+        background-color: #202020;
+        color: #ffffff;
+        padding: 10px 20px;
+    }
+    
+    .testimonial-heading span {
+        font-size: 1.3rem;
+        color: #252525;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    
+    .testimonial-box-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .testimonial-box {
+        width: 540px;
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 15px;
+        cursor: pointer;
+    }
+    
+    .profile-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+    /* .profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+} */
+    
+    .profile {
+        display: flex;
+        align-items: center;
+    }
+    
+    .name-user {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .name-user strong {
+        color: #3d3d3d;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .name-user span {
+        color: #979797;
+        font-size: 0.8rem;
+    }
+    
+    .rating {
+        color: #f9d71c;
+        font-size: 20px;
+        padding-left: 75%;
+        margin-top: -40px;
+        padding-bottom: 20px;
+    }
+    
+    .client-comment p {
+        font-size: 0.9rem;
+        color: #4b4b4b;
+    }
+    
+    @media(max-width:1060px) {
+        .testimonial-box {
+            width: 45%;
+            padding: 10px;
+        }
+    }
+    
+    @media(max-width:790px) {
+        .testimonial-box {
+            width: 100%;
+        }
+        .testimonial-heading h1 {
+            font-size: 1.4rem;
+        }
+    }
+    
+    @media(max-width:340px) {
+        .box-top {
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .reviews {
+            margin-top: 10px;
+        }
+    }
+    
+     ::selection {
+        color: #ffffff;
+        background-color: #252525;
+    }
+    
+    .button-left {
+        position: absolute;
+        padding-left: 28%;
+        margin-top: -35px;
+    }
+    
+    .button-left button {
+        padding: 5px 20px;
+    }
+    
+    .button-right {
+        margin-top: 10px;
+    }
+

@@ -6,11 +6,9 @@
 <html>
 <head>
 <link rel="stylesheet" href="/views/user/css/giohang.css">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-	crossorigin="anonymous">
+<link rel="icon" href="/views/image/Fashion-small.png" type=""
+	sizes="16x16">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -18,59 +16,31 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Giỏ hàng | Fashion Threads</title>
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/style_02.css?v=14" />
+<!-- <link rel="stylesheet" -->
+<!-- 	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/responsive.css" /> -->
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/style.css?v=12" />
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/custom.css?v=5" />
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/product-detail-temp.css">
+
+<link rel="stylesheet"
+	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/fixed.css?v=23" />
+<!-- <link rel="stylesheet" -->
+<!-- 	href="https://pubcdn.ivymoda.com/ivy2/css/new_style/pvh.css?v=7" /> -->
+
 </head>
 <body>
 	<!-- menu -->
 	<form action="">
-		<header>
-			<div class="row">
-				<div class="col-5">
-					<div>
-						<nav class="navbar navbar-expand-lg">
-							<div class="container-fluid"
-								style="padding-left: 50px; padding-top: 10px;">
-								<div class="collapse navbar-collapse" id="navbarNav">
-									<ul class="navbar-nav">
-										<li class="nav-item"><a class="nav-link" href="#">NAM</a>
-										</li>
-										<li class="nav-item"><a class="nav-link" href="#">NỮ</a></li>
-										<li class="nav-item"><a class="nav-link"
-											style="width: 70px;" href="#">TRẺ EM</a></li>
-										<li class="nav-item"><a class="nav-link"
-											style="width: 90px;" href="#">GIẢM GIÁ</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">CUỘC
-												SỐNG</a></li>
-										<li class="nav-item"><a class="nav-link"
-											style="width: 140px;" href="#">VỀ CHÚNG TÔI</a></li>
-									</ul>
-								</div>
-							</div>
-						</nav>
-					</div>
-				</div>
-				<div class="col-3" id="logo">
-					<img src="../image/iconft.jpg"
-						style="padding-top: 20px; width: 200px;" alt="">
-				</div>
-				<div class="col-4" id="search">
-					<div id="w-left-50">
-						<div class="find-product">
-							<input type="search" placeholder="TÌM KIẾM SẢN PHẨM">
-							<button type="submit">Search</button>
-						</div>
-					</div>
-					<div id="w-right-50">
-						<a href="#"><i class="bi bi-globe-americas"></i></a> <a href="/form/login"><i
-							class="bi bi-person"></i></a> <a href="/form/login"><i class="bi bi-bag"></i></a>
-					</div>
-
-				</div>
-			</div>
-		</header>
+		<jsp:include page="/views/user/layout/header.jsp"></jsp:include>
 		<hr>
 		<!-- main -->
-		<section class="container">
+		<%-- <section class="container">
 			<p style="margin-bottom: 50px;">
 				<a id="link-page" href="/views/home">Trang chủ</a><i
 					class="bi bi-chevron-right"></i> <a id="link-page"
@@ -162,59 +132,163 @@
 				</div>
 
 			</div>
-		</section>
-		<!-- footer -->
-		<footer class="container" style="margin-top: 70px;">
-			<div class="row">
-				<div class="col-3">
-					<img
-						src="../image/z4805893268304_4da797551877695a26a2914211ce8e30.jpg"
-						style="width: 100%;" alt="">
-					<p>Công ty Cổ phần Dự Kim với số đăng ký kinh doanh: 0105777650</p>
-					<p>Địa chỉ đăng ký: Tổ dân phố Tháp, P.Đại Mỗ, Q.Nam Từ Liêm,
-						TP.Hà Nội, Việt Nam</p>
-					<p>Số điện thoại: 0243 205 2222/ 090 589 8683</p>
-					<p>Email: cskh@ivy.com.vn</p>
+		</section> --%>
+			<main id="main" class="site-main"
+		style="padding-left: 80px; padding-right: 80px; padding-top: 0 !important;">
+			<div class="container-fluid">
+				<form name="frm_cart" id="frm_cart" method="post" action=""
+					enctype="application/x-www-form-urlencoded">
+					<input type="hidden" name="is_cart_page" value="1" />
+					<div class="cart pt-40 cart-page">
+						<div class="row">
+							<!--<h3>Giỏ hàng của bạn</h3>-->
+							<div class="col-lg-8">
 
-				</div>
-				<div class="col-2">
-					<h3>Giới thiệu</h3>
-					<p>Về Fashion Thread</p>
-					<p>Tuyển dụng</p>
-					<p>Hệ thống của hàng</p>
-				</div>
-				<div class="col-3">
-					<h3>Dịch vụ khách hàng</h3>
-					<p>Chính sách điều khoản</p>
-					<p>Hướng dẫn mua hàng</p>
-					<p>Chính sách thanh toán</p>
-					<p>Chính sách đổi trả</p>
-					<p>Chính sách bảo hành</p>
-					<p>Chính sách giao hành vận chuyển</p>
-					<p>Chính sách thẻ thành viên</p>
-					<p>Hệ thống cửa hàng</p>
-					<p>Q&A</p>
-				</div>
-				<div class="col-2">
-					<h3>Liên hệ</h3>
-					<p>Hotline</p>
-					<p>Email</p>
-					<p>Live Chat</p>
-					<p>Messenger</p>
-					<p>Liên hệ</p>
-				</div>
-				<div class="col-2"
-					style="border-radius: 50px 10px; border: solid; height: 300px;">
-					<h4 style="margin-top: 40px;">Nhận thông tin chương trình</h4>
-					<input id="input-form" style="margin-top: 20px;" type="email"
-						placeholder="Nhập địa chỉ email">
-					<button
-						style="margin-top: 20px; border-radius: 20px 2px; float: right;"
-						type="button" class="btn btn-outline-dark">Dark</button>
-				</div>
+								<div id="box_product_total_cart">
+									<div class="cart__list">
+										<h2 class="cart-title">Giỏ hàng của bạn</h2>
+										<table class="cart__table">
+											<thead>
+												<tr>
+													<th>Tên Sản phẩm</th>
+													<th>VOUCHER</th>
+													<th>Số lượng</th>
+													<th>Tổng tiền</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<c:forEach items="${cart}" var="c">
+													<tr>
+														<td>
+															<div class="cart__product-item">
+																<div class="cart__product-item__img">
+																	<a href=""> <img
+																		src="/views/image/${c.product.image}"
+																		alt="Áo sơ mi lụa cổ đức">
+																	</a>
+																</div>
+																<div class="cart__product-item__content">
+																	<a href="">
+																		<h3 class="cart__product-item__title">${c.product.product_name}</h3>
+																	</a>
+																	<div class="cart__product-item__properties">
+																		<p>
+																			Màu sắc: <span>${c.color}</span>
+																		</p>
+																		<p>
+																			Size: <span style="text-transform: uppercase">${c.size}</span>
+																		</p>
+																	</div>
+																</div>
+															</div>
+														</td>
+														<td class="cart-sale-price">
+															<p>-575.000đ</p>
+															<p class="cart-sale_item">( -50% )</p>
+														</td>
+														<td>
+															<div class="product-detail__quantity-input"
+																data-product-sub-id="188735">
+																<input type="number" value="${c.quantity}" min="0"
+																	data-product-index="0" />
+																<div class="product-detail__quantity--increase">+</div>
+																<div class="product-detail__quantity--decrease">-</div>
+															</div>
+														</td>
+														<td>
+															<div class="cart__product-item__price">${(c.price * c.quantity).intValue() }</div>
+														</td>
+														<td><a href="/cart/delete/${c.id}"
+															class="remove-item-cart" data-product-index="0"
+															data-product-sub-id="188735"><span
+																class="icon-ic_garbage"></span></a></td>
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
+									</div>
+									<div class="cart__list--attach"></div>
+									<div class="cart__list--attach">
+										<!---->
+									</div>
+								</div>
+								<a href="/product"
+									class="btn btn--large btn--outline btn-cart-continue mb-3">
+									<span class="icon-ic_left-arrow"></span> Tiếp tục mua hàng
+								</a>
+							</div>
+							<div class="col-lg-4 cart-page__col-summary"
+								style="padding-top: 100px; margin-left: 20px;">
+								<div class="cart-summary" id="cart-page-summary">
+									<div class="cart-summary__overview">
+										<h3>Tổng tiền giỏ hàng</h3>
+										<div class="cart-summary__overview__item">
+											<p>Tổng sản phẩm</p>
+											<p class="total-product">${countQuantity}</p>
+										</div>
+										<div class="cart-summary__overview__item">
+											<p>Tổng tiền hàng</p>
+											<p class="total-not-discount">${countTotalProduct}</p>
+										</div>
+										<div class="cart-summary__overview__item">
+											<p>Voucher</p>
+											<p class="total-not-discount">0</p>
+										</div>
+										<div class="cart-summary__overview__item">
+											<p>Phí vẫn chuyển</p>
+											<p class="total-not-discount">0</p>
+										</div>
+										<div class="cart-summary__overview__item">
+											<p>Thành tiền</p>
+											<p>
+												<b class="order-price-total">${countTotalProduct}</b>
+											</p>
+										</div>
+									</div>
+									<div class="cart-summary__note">
+										<div class="inner-note d-flex">
+											<div class="left-inner-note">
+												<span class="icon-ic_alert"></span>
+											</div>
+											<div class="content-inner-note">
+												<p>
+													Miễn <b>đổi trả</b> đối với sản phẩm đồng giá / sale trên
+													50%
+												</p>
+											</div>
+											<div class="left-inner-note left-inner-note-shipping d-none">
+												<span class="icon-ic_alert"></span>
+											</div>
+											<div
+												class="content-inner-note content-inner-note-shipping d-none">
+												<p>Miễn phí ship đơn hàng có tổng gía trị trên
+													2.000.000đ</p>
+												<div class="sub-note">
+													<!--                                                                                                                        Mua thêm <strong>1.425.000đ</strong> để được miễn phí SHIP
+                                                                            -->
+													Mua thêm <strong>1.425.000đ</strong> để được miễn phí SHIP
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cart-summary__button">
+									<a href="/views/payment" class="btn" style="border-radius: 15px 0px 15px 0; height: 50px;
+									 background: black; color: white; text-align: center; padding-top: 15px;" id="purchase-step-1">Đặt
+										hàng</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+
+
 			</div>
-
-		</footer>
+		</main>
+		<!-- footer -->
+		<jsp:include page="/views/user/layout/footer.jsp"></jsp:include>
 	</form>
 </body>
 </html>
